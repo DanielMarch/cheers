@@ -24,3 +24,14 @@ else
   end
   puts "#{name.upcase}'s just GRAND!"
 end
+puts "Hey, #{name}, what's your birthday?"
+date = gets.chomp
+if date.empty?
+  puts "You must enter your birthdate!!!"
+else
+  require 'Date'
+  birthday = Date.parse(date)
+  today = Date.today
+  dif = (birthday - today).to_i
+  puts "Awesome!  Your birthday is in #{dif} days! Happy Birthday in advance!"
+end
